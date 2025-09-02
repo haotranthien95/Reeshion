@@ -6,15 +6,23 @@
 //
 
 import SwiftUI
+import CoreNetworking
+import DomainProducts
+import FeaturesHome
+import DataProducts
 
 @main
 struct ReeshionApp: App {
-    let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            let baseURL = URL(string: "https://api.reetro.vn/")!
+
+            let client = URLSessionNetworkClient()
+            let repo: ProductRepository = ProductsRepositoryImpl(baseURL: baseURL, client: client)
+            let fetchProducts = FetchProductsUseCase(repo: repo)
+            let homeVM = HomeViewModel(fetchProducts: fetchProducts)
+
+            HomeView(viewModel: homeVM)
         }
     }
 }

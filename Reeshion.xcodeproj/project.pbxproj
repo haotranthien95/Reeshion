@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		441DA2982E6547740088A688 /* CoreNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 441DA2972E6547740088A688 /* CoreNetworking */; };
+		441DA29A2E6547740088A688 /* CoreUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 441DA2992E6547740088A688 /* CoreUtilities */; };
+		441DA29C2E6547740088A688 /* DataProducts in Frameworks */ = {isa = PBXBuildFile; productRef = 441DA29B2E6547740088A688 /* DataProducts */; };
+		441DA29E2E6547740088A688 /* DomainProducts in Frameworks */ = {isa = PBXBuildFile; productRef = 441DA29D2E6547740088A688 /* DomainProducts */; };
+		441DA2A02E6547740088A688 /* FeaturesHome in Frameworks */ = {isa = PBXBuildFile; productRef = 441DA29F2E6547740088A688 /* FeaturesHome */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		44B569E82E62A4C300FA0E29 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				441DA29C2E6547740088A688 /* DataProducts in Frameworks */,
+				441DA29A2E6547740088A688 /* CoreUtilities in Frameworks */,
+				441DA2A02E6547740088A688 /* FeaturesHome in Frameworks */,
+				441DA29E2E6547740088A688 /* DomainProducts in Frameworks */,
+				441DA2982E6547740088A688 /* CoreNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +85,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		441DA2962E6547740088A688 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		44B569C92E62A4C100FA0E29 = {
 			isa = PBXGroup;
 			children = (
 				44B569D42E62A4C100FA0E29 /* Reeshion */,
 				44B569EA2E62A4C300FA0E29 /* ReeshionTests */,
 				44B569F42E62A4C400FA0E29 /* ReeshionUITests */,
+				441DA2962E6547740088A688 /* Frameworks */,
 				44B569D32E62A4C100FA0E29 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +133,11 @@
 			);
 			name = Reeshion;
 			packageProductDependencies = (
+				441DA2972E6547740088A688 /* CoreNetworking */,
+				441DA2992E6547740088A688 /* CoreUtilities */,
+				441DA29B2E6547740088A688 /* DataProducts */,
+				441DA29D2E6547740088A688 /* DomainProducts */,
+				441DA29F2E6547740088A688 /* FeaturesHome */,
 			);
 			productName = Reeshion;
 			productReference = 44B569D22E62A4C100FA0E29 /* Reeshion.app */;
@@ -195,6 +221,9 @@
 			);
 			mainGroup = 44B569C92E62A4C100FA0E29;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				441DA2952E65472C0088A688 /* XCLocalSwiftPackageReference "Modules/AppModules" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 44B569D32E62A4C100FA0E29 /* Products */;
 			projectDirPath = "";
@@ -552,6 +581,41 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		441DA2952E65472C0088A688 /* XCLocalSwiftPackageReference "Modules/AppModules" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Modules/AppModules;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		441DA2972E6547740088A688 /* CoreNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 441DA2952E65472C0088A688 /* XCLocalSwiftPackageReference "Modules/AppModules" */;
+			productName = CoreNetworking;
+		};
+		441DA2992E6547740088A688 /* CoreUtilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 441DA2952E65472C0088A688 /* XCLocalSwiftPackageReference "Modules/AppModules" */;
+			productName = CoreUtilities;
+		};
+		441DA29B2E6547740088A688 /* DataProducts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 441DA2952E65472C0088A688 /* XCLocalSwiftPackageReference "Modules/AppModules" */;
+			productName = DataProducts;
+		};
+		441DA29D2E6547740088A688 /* DomainProducts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 441DA2952E65472C0088A688 /* XCLocalSwiftPackageReference "Modules/AppModules" */;
+			productName = DomainProducts;
+		};
+		441DA29F2E6547740088A688 /* FeaturesHome */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 441DA2952E65472C0088A688 /* XCLocalSwiftPackageReference "Modules/AppModules" */;
+			productName = FeaturesHome;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 44B569CA2E62A4C100FA0E29 /* Project object */;
 }
