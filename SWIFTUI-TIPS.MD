@@ -1,4 +1,5 @@
 # SwiftUI Cheat Sheet (2025)
+**List components: [Components](/Docs/Components.md)
 
 ## 1) State & Data Flow
 
