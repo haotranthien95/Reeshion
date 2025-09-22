@@ -28,63 +28,63 @@ let package = Package(
         .target(
             name: "CoreUtilities",
             dependencies: [],
-            path: "Sources/CoreUtilities"
+            path: "Sources/Core/CoreUtilities"
         ),
         .target(
             name: "CoreNetworking",
             dependencies: ["CoreUtilities"],
-            path: "Sources/CoreNetworking"
+            path: "Sources/Core/CoreNetworking"
         ),
         .target(
             name: "CorePersistence",
             dependencies: ["CoreUtilities"],
-            path: "Sources/CorePersistence"
+            path: "Sources/Core/CorePersistence"
         ),
         .target(
             name: "CoreAnalytics",
             dependencies: ["CoreUtilities"],
-            path: "Sources/CoreAnalytics"
+            path: "Sources/Core/CoreAnalytics"
         ),
 
         // DOMAIN (independent on Core/Data)
         .target(
             name: "DomainProducts",
             dependencies: [],
-            path: "Sources/DomainProducts"
+            path: "Sources/Domain/DomainProducts"
         ),
         .target(
             name: "DomainAuth",
             dependencies: [],
-            path: "Sources/DomainAuth"
+            path: "Sources/Domain/DomainAuth"
         ),
         .target(
             name: "DomainCart",
             dependencies: [],
-            path: "Sources/DomainCart"
+            path: "Sources/Domain/DomainCart"
         ),
         .target(
             name: "DomainOrders",
             dependencies: [],
-            path: "Sources/DomainOrders"
+            path: "Sources/Domain/DomainOrders"
         ),
 
         // DATA (implement repositories, depend on Domain + Core)
         .target(
             name: "DataProducts",
             dependencies: ["DomainProducts", "CoreNetworking", "CorePersistence", "CoreUtilities"],
-            path: "Sources/DataProducts"
+            path: "Sources/Data/DataProducts"
         ),
         .target(
             name: "DataAuth",
             dependencies: ["DomainAuth", "CoreNetworking", "CorePersistence", "CoreUtilities"],
-            path: "Sources/DataAuth"
+            path: "Sources/Data/DataAuth"
         ),
 
         // FEATURES (SwiftUI, depend on Domain; composition happens in App)
         .target(
             name: "FeaturesHome",
             dependencies: ["DomainProducts"],
-            path: "Sources/FeaturesHome"
+            path: "Sources/Feature/FeaturesHome"
         ),
 
         // (create test targets when needed)

@@ -21,6 +21,7 @@ public struct HomeView: View {
                                 Text(format(price: p.price)).font(.subheadline)
                             }
                             Spacer()
+                            AsyncImage(url:p.imageURL)
                         }
                     }
                 }
