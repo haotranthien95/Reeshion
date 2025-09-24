@@ -38,3 +38,31 @@ public struct HomeView: View {
         return nf.string(from: price as NSDecimalNumber) ?? "\(price)"
     }
 }
+
+
+public struct ProductItem: View {
+    let product:Product
+    
+    public init(product:Product){
+        self.product = product
+    }
+    
+    public var body: some View {
+        HStack() {
+            VStack(alignment: .leading) {
+                Text(product.name).font(.headline)
+                Text(format(price: product.price)).font(.subheadline)
+            }
+            Spacer()
+            AsyncImage(url:product.imageURL)
+        }
+    }
+    
+    private func format(price: Decimal) -> String {
+        let nf = NumberFormatter()
+        nf.numberStyle = .currency
+        nf.currencyCode = "USD"
+        return nf.string(from: price as NSDecimalNumber) ?? "\(price)"
+    }
+}
+
