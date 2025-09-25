@@ -10,9 +10,12 @@ import CoreNetworking
 import DomainProducts
 import FeaturesHome
 import DataProducts
+import CoreTheme
 
 @main
 struct ReeshionApp: App {
+    @Environment(\.appTheme) private var theme
+    
     var body: some Scene {
         WindowGroup {
             let baseURL = URL(string: "https://api.reetro.vn/")!
@@ -21,8 +24,9 @@ struct ReeshionApp: App {
             let repo: ProductRepository = ProductsRepositoryImpl(baseURL: baseURL, client: client)
             let fetchProducts = FetchProductsUseCase(repo: repo)
             let homeVM = HomeViewModel(fetchProducts: fetchProducts)
-
-            HomeView(viewModel: homeVM)
+            ThemeContainer {
+                HomeView(viewModel: homeVM)
+            }
         }
     }
 }

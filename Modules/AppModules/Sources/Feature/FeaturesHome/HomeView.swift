@@ -1,8 +1,10 @@
 import SwiftUI
 import DomainProducts
+import CoreTheme
 
 public struct HomeView: View {
     @StateObject private var vm: HomeViewModel
+    
 
     public init(viewModel: HomeViewModel) {
         _vm = StateObject(wrappedValue: viewModel)
@@ -15,14 +17,7 @@ public struct HomeView: View {
                     ProgressView("Loading…")
                 } else {
                     List(vm.items) { p in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(p.name).font(.headline)
-                                Text(format(price: p.price)).font(.subheadline)
-                            }
-                            Spacer()
-                            AsyncImage(url:p.imageURL)
-                        }
+                        ProductItem(product: p)
                     }
                 }
             }
@@ -41,6 +36,7 @@ public struct HomeView: View {
 
 
 public struct ProductItem: View {
+    @Environment(\.appTheme) private var theme
     let product:Product
     
     public init(product:Product){
@@ -48,14 +44,14 @@ public struct ProductItem: View {
     }
     
     public var body: some View {
-        HStack() {
+                HStack() {
             VStack(alignment: .leading) {
-                Text(product.name).font(.headline)
+                Text(product.name).foregroundStyle(theme.colors.primary)
                 Text(format(price: product.price)).font(.subheadline)
-            }
+            }.frame(minWidth:200)
             Spacer()
-            AsyncImage(url:product.imageURL)
-        }
+            AsyncImage(url:product.imageURL).frame(width:200 ,height: 200).scaledToFit().clipped(antialiased: true)
+        }.frame(maxHeight:200)
     }
     
     private func format(price: Decimal) -> String {
@@ -66,3 +62,8 @@ public struct ProductItem: View {
     }
 }
 
+#Preview {
+    ProductItem(product:productMock)
+}
+
+let productMock = Product(id: "1121", name: "Quần Kaki Dancer", price: 200000, imageURL:URL(string:"https://reetro.vn/wp-content/uploads/2024/12/vn-11134208-7ras8-m1idl8t8uenz9b.jpg"))
