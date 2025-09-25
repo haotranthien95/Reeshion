@@ -5,7 +5,7 @@ It is designed as a foundation for a production-ready app with support for **Fir
 
 ---
 ## Info
-- Theme: [Reetro-theme](\http://material-foundation.github.io/material-theme-builder/?primary=%23B8423B&bodyFont=Inter&displayFont=Inter&colorMatch=false)
+- Theme: [Reetro-theme](http://material-foundation.github.io/material-theme-builder/?primary=%23B8423B&bodyFont=Inter&displayFont=Inter&colorMatch=false)
 <img width="915" height="642" alt="Screenshot 2025-09-25 at 18 20 32" src="https://github.com/user-attachments/assets/25cbf771-a304-4071-9d7e-18ba1054fc55" />
 
 ## 🚀 Features
