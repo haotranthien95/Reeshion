@@ -13,6 +13,7 @@
 		441DA29E2E6547740088A688 /* DomainProducts in Frameworks */ = {isa = PBXBuildFile; productRef = 441DA29D2E6547740088A688 /* DomainProducts */; };
 		441DA2A02E6547740088A688 /* FeaturesHome in Frameworks */ = {isa = PBXBuildFile; productRef = 441DA29F2E6547740088A688 /* FeaturesHome */; };
 		446A297C2E8561E000CE0B3A /* CoreTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 446A297B2E8561E000CE0B3A /* CoreTheme */; };
+		448588022E867A690061D41E /* CommonViews in Frameworks */ = {isa = PBXBuildFile; productRef = 448588012E867A690061D41E /* CommonViews */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 				446A297C2E8561E000CE0B3A /* CoreTheme in Frameworks */,
 				441DA29A2E6547740088A688 /* CoreUtilities in Frameworks */,
 				441DA2A02E6547740088A688 /* FeaturesHome in Frameworks */,
+				448588022E867A690061D41E /* CommonViews in Frameworks */,
 				441DA29E2E6547740088A688 /* DomainProducts in Frameworks */,
 				441DA2982E6547740088A688 /* CoreNetworking in Frameworks */,
 			);
@@ -141,6 +143,7 @@
 				441DA29D2E6547740088A688 /* DomainProducts */,
 				441DA29F2E6547740088A688 /* FeaturesHome */,
 				446A297B2E8561E000CE0B3A /* CoreTheme */,
+				448588012E867A690061D41E /* CommonViews */,
 			);
 			productName = Reeshion;
 			productReference = 44B569D22E62A4C100FA0E29 /* Reeshion.app */;
@@ -622,6 +625,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 441DA2952E65472C0088A688 /* XCLocalSwiftPackageReference "Modules/AppModules" */;
 			productName = CoreTheme;
+		};
+		448588012E867A690061D41E /* CommonViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 441DA2952E65472C0088A688 /* XCLocalSwiftPackageReference "Modules/AppModules" */;
+			productName = CommonViews;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

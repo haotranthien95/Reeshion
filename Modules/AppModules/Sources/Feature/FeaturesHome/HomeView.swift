@@ -1,6 +1,7 @@
 import SwiftUI
 import DomainProducts
 import CoreTheme
+import CommonViews
 
 public struct HomeView: View {
     @StateObject private var vm: HomeViewModel
@@ -25,13 +26,6 @@ public struct HomeView: View {
         }
         .task { await vm.loadFirstPage() }
     }
-
-    private func format(price: Decimal) -> String {
-        let nf = NumberFormatter()
-        nf.numberStyle = .currency
-        nf.currencyCode = "USD"
-        return nf.string(from: price as NSDecimalNumber) ?? "\(price)"
-    }
 }
 
 
@@ -46,12 +40,22 @@ public struct ProductItem: View {
     public var body: some View {
                 HStack() {
             VStack(alignment: .leading) {
-                Text(product.name).foregroundStyle(theme.colors.primary)
+                Text(product.name)
+                    .font(.title)
                 Text(format(price: product.price)).font(.subheadline)
-            }.frame(minWidth:200)
+                Text(format(price: product.price)).font(.caption)
+                Text(format(price: product.price)).font(.body)
+                Text(format(price: product.price))
+                    .font(.footnote)
+                Text(format(price: product.price))
+                    .font(.caption2)
+                PrimaryButton(label:"Click me") {
+                       print("Button tapped")
+                   }
+            }.frame(minWidth:200).allowsHitTesting(false)
             Spacer()
             AsyncImage(url:product.imageURL).frame(width:200 ,height: 200).scaledToFit().clipped(antialiased: true)
-        }.frame(maxHeight:200)
+                }.allowsHitTesting(false)
     }
     
     private func format(price: Decimal) -> String {

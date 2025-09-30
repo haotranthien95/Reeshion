@@ -12,6 +12,7 @@ let package = Package(
         .library(name: "CorePersistence", targets: ["CorePersistence"]),
         .library(name: "CoreAnalytics", targets: ["CoreAnalytics"]),
         .library(name: "CoreTheme", targets: ["CoreTheme"]),
+        .library(name: "CommonViews", targets: ["CommonViews"]),
 
         .library(name: "DomainProducts", targets: ["DomainProducts"]),
         .library(name: "DomainAuth", targets: ["DomainAuth"]),
@@ -35,6 +36,10 @@ let package = Package(
             name: "CoreTheme",
             dependencies: [],
             path: "Sources/Core/CoreTheme"
+        ), .target(
+            name: "CommonViews",
+            dependencies: [],
+            path: "Sources/Core/CommonViews"
         ),
         .target(
             name: "CoreNetworking",
@@ -89,7 +94,7 @@ let package = Package(
         // FEATURES (SwiftUI, depend on Domain; composition happens in App)
         .target(
             name: "FeaturesHome",
-            dependencies: ["DomainProducts", "CoreTheme"],
+            dependencies: ["DomainProducts", "CoreTheme","CommonViews"],
             path: "Sources/Feature/FeaturesHome"
         ),
 
