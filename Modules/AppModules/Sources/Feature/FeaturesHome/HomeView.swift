@@ -52,10 +52,13 @@ public struct ProductItem: View {
                 PrimaryButton(label:"Click me") {
                        print("Button tapped")
                    }
-            }.frame(minWidth:200).allowsHitTesting(false)
+                PrimaryButton(label:"Click me not") {
+                       print("Button tapped 2")
+                   }
+            }.frame(minWidth:200)
             Spacer()
-            AsyncImage(url:product.imageURL).frame(width:200 ,height: 200).scaledToFit().clipped(antialiased: true)
-                }.allowsHitTesting(false)
+                    AsyncImage(url:product.imageURL).frame(width:150 ,height: 200).scaledToFit().clipped(antialiased: true).allowsHitTesting(false)
+                }
     }
     
     private func format(price: Decimal) -> String {
