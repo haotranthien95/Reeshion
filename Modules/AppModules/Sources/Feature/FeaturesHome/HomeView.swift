@@ -57,7 +57,24 @@ public struct ProductItem: View {
                    }
             }.frame(minWidth:200)
             Spacer()
-                    AsyncImage(url:product.imageURL).frame(width:150 ,height: 200).scaledToFit().clipped(antialiased: true).allowsHitTesting(false)
+                    AsyncImage(url:product.imageURL){ phase in
+                        switch phase {
+                            case .empty:
+                                ProgressView()
+                                    .frame(width: 200, height: 200)
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 200, height: 200)
+                                    .clipped()
+                            case .failure:
+                                Color.gray
+                                    .frame(width: 200, height: 200)
+                            @unknown default:
+                                EmptyView()
+                            }
+                    }.allowsHitTesting(false)
                 }
     }
     
